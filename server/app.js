@@ -1,26 +1,25 @@
+const cors = require('cors');
 const express = require('express');
 const axios = require('axios');
-const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 const PORT = 5000;
 
+// Enable CORS
 app.use(cors());
 app.use(express.json());
 
-// Replace with your valid NewsAPI key
-const NEWS_API_KEY = 'aad5b15f1a9142d0a2b1dc4ee64fe5be';
-const NEWS_API_URL = 'https://newsapi.org/v2/top-headlines';
-
+// API endpoint to fetch news
 app.get('/api/news', async (req, res) => {
     try {
-        const response = await axios.get(NEWS_API_URL, {
+        const response = await axios.get('https://newsapi.org/v2/top-headlines', {
             params: {
                 country: 'us',
-                apiKey: NEWS_API_KEY, // Pass API key as a query parameter
+                apiKey: process.env.NEWS_API_KEY, // Use environment variable
             },
         });
-        res.json(response.data); // Send news data to frontend
+        res.json(response.data);
     } catch (error) {
         console.error('Error fetching news:', error.message);
         res.status(500).json({ error: 'Failed to fetch news.' });

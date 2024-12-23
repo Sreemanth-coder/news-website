@@ -36,7 +36,9 @@ function App() {
                 {news.map((article, index) => (
                     <article key={index} className="news-article">
                         <h2>{article.title}</h2>
-                        <img src={article.urlToImage} alt={article.title} />
+                        {article.urlToImage && (
+                            <img src={article.urlToImage} alt={article.title} />
+                        )}
                         <p>{article.description}</p>
                         <a href={article.url} target="_blank" rel="noopener noreferrer">
                             Read more

@@ -1,84 +1,55 @@
-/* General Reset */
-body, html, #root {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  height: 100%;
+  background-color: #f4f4f9;
 }
 
-/* App Header */
-.App-header {
-  background-color: #1e90ff;
-  color: white;
-  padding: 1rem;
+.App {
   text-align: center;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.App-header h1 {
-  margin: 0;
-  font-size: 2rem;
+.App-header {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
 }
 
-/* Main Content */
 main {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+  padding: 20px;
 }
 
-/* News Articles */
 .news-article {
-  background: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.news-article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.news-article h2 {
-  font-size: 1.5rem;
-  color: #1e90ff;
-  margin-bottom: 0.5rem;
+  background-color: white;
+  text-align: left;
 }
 
 .news-article img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
-  margin: 1rem 0;
+  margin-bottom: 10px;
+}
+
+.news-article h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 .news-article p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
+  font-size: 1em;
+  margin-bottom: 10px;
 }
 
 .news-article a {
-  display: inline-block;
+  color: #007bff;
   text-decoration: none;
-  color: white;
-  background-color: #1e90ff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  margin-top: 1rem;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .news-article a:hover {
-  background-color: #0f78d1;
-}
-
-/* Loading and Error Messages */
-p {
-  text-align: center;
-  font-size: 1.2rem;
+  text-decoration: underline;
 }
