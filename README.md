@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# News Website (MERN Stack)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple News website built using the **MERN stack** (MongoDB, Express.js, React, Node.js). This application fetches the latest news headlines using the [NewsAPI](https://newsapi.org) and displays them in a clean, user-friendly interface.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetches the latest news articles from multiple sources using the News API.
+- Displays news articles with their title, image, description, and link to the full article.
+- Built with **React** on the frontend and **Express.js** on the backend.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, HTML, CSS
+- **Backend**: Node.js, Express.js
+- **API**: NewsAPI (for fetching news articles)
+- **Styling**: Custom CSS
+- **Environment Variables**: Used to store sensitive data like the API key
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before you begin, make sure you have the following installed on your machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** (v16 or higher) - [Download Node.js](https://nodejs.org/)
+- **npm** (Node Package Manager) - comes with Node.js
+- **NewsAPI Key** - You can get a free API key by signing up at [NewsAPI](https://newsapi.org/)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step 1: Clone the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/your-username/news-website.git
+cd news-website
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Apologies for the confusion! Here is the entire section in code format for the `README.md` file:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```markdown
+### Step 2: Backend Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Navigate to the backend folder:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   cd backend
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install the required dependencies:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Create a `.env` file in the root of the backend folder and add your NewsAPI key:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```makefile
+   NEWS_API_KEY=your_news_api_key_here
+   ```
 
-### Code Splitting
+4. Start the backend server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   node app.js
+   ```
 
-### Analyzing the Bundle Size
+   The backend will run on `http://localhost:5000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Step 3: Frontend Setup
 
-### Making a Progressive Web App
+1. Navigate to the frontend folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   cd frontend
+   ```
 
-### Advanced Configuration
+2. Install the required dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   npm install
+   ```
 
-### Deployment
+3. Start the React development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   npm start
+   ```
 
-### `npm run build` fails to minify
+   The frontend will run on `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Step 4: Open the App
+
+Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the latest news displayed.
+
+## How It Works
+
+- The React app sends a request to the Express backend at `http://localhost:5000/api/news`.
+- The backend fetches news from the NewsAPI and returns the articles in JSON format.
+- The frontend React app processes this data and displays the news articles, including titles, images, descriptions, and links to full articles.
+
+## Troubleshooting
+
+1. **CORS Issues**: If you encounter any CORS issues while running the frontend and backend on different ports, ensure you have `cors` enabled in your backend (`app.js`).
+
+2. **Missing API Key**: Make sure your `.env` file in the backend contains the correct API key (`NEWS_API_KEY=your_news_api_key_here`).
+
+3. **OpenSSL Error (Node.js >= 17)**: If you face the `ERR_OSSL_EVP_UNSUPPORTED` error, add the `--openssl-legacy-provider` flag when running the backend:
+
+   ```bash
+   node --openssl-legacy-provider app.js
+   ```
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
