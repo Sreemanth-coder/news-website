@@ -10,13 +10,14 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-// API endpoint to fetch news
+
 app.get('/api/news', async (req, res) => {
     try {
         const response = await axios.get('https://newsapi.org/v2/top-headlines', {
             params: {
                 country: 'us',
-                apiKey: process.env.NEWS_API_KEY, // Use environment variable
+                pageSize: 50, // Fetch up to 50 articles (adjust as needed)
+                apiKey: process.env.NEWS_API_KEY,
             },
         });
         res.json(response.data);
@@ -26,6 +27,8 @@ app.get('/api/news', async (req, res) => {
     }
 });
 
+
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
