@@ -111,3 +111,4 @@ Open your browser and go to [http://localhost:3000](http://localhost:3000) to se
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
+Updated README forintership PR submission
